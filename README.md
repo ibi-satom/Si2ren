@@ -1,13 +1,14 @@
 # Welcome 
-# IBI by Satom IT & Learning solutions
-Welcome to the GitHub home page for Si2ren: an i2 connector developed by Satom IT that transforms from the Siren Investigate Platform to Analyst's Notebook Premium through i2 Connect gateway of i2 Analyze. 
+Welcome to the GitHub home page for *Si2ren*: an IBM i2 connector developed by [Satom IT & Learning solutions](https://satom.net/) that transforms from the [Siren Platform](https://siren.io/) to i2 Analyst's Notebook Premium through i2 Connect gateway of i2 Analyze. 
 This repository contains example code of Si2ren.
 
+## About IBI: Investigation By Image
+
 ## Si2ren: Example code
-This example is built over the Siren's tutorial data.
+This example is built over the [Siren's demo data](https://docs.siren.io/siren-platform-user-guide/11.0/getting-started/getting-started-with-demo-data.html). 
 
 ## About Siren demo data
-Siren's demo data are sample data from a TechCrunch data source collected some years ago, along with a sample of technical articles that were collected online [ref].
+Siren's demo data are sample data from a TechCrunch data source collected some years ago, along with a sample of technical articles that were collected online.
 It consists of 4 csv file:
  - companies.csv: A list of companies that includes geo-locations and descriptions.
 
@@ -35,3 +36,7 @@ It consists of 4 csv file:
 >>>
 Overviews field of the example article document: <p>AbbVie is a global, research-based biopharmaceutical company formed in 2013 following separation from Abbott. The company&#8217;s mission is to use its expertise, dedicated people and unique approach to innovation to develop and market advanced therapies that address some of the world&#8217;s most complex and serious diseases. In 2013, AbbVie employs approximately 21,000 people worldwide and markets medicines in more than 170 countries.</p> 
 >>>
+
+## References
+- [IBM i2 Enterprise Insight Analysis 2.3.4](https://www.ibm.com/support/knowledgecenter/SSXVXZ_2.3.4/com.ibm.i2.releasenotes.doc/eia.html)
+- [THE SIREN TUTORIAL](https://siren.io/getting-started/)
