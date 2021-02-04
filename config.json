@@ -1,0 +1,292 @@
+{
+  "defaultValues": {
+    "timeZoneId": "Europe/London",
+    "entityTypeId": "ET5",
+    "linkTypeId": "LAS1"
+  },
+
+  "schemaUrl": "/schema",
+  "chartingSchemesUrl": "/chartingSchemes",
+
+  "services": [
+	{
+      "id": "sirendashboards",
+      "name": "Siren Dashboards",
+      "description": "Make a request to get the dashboards of siren.",
+
+      "acquireUrl": "/sirenDashboards/acquire",
+      
+      "clientConfigType": "FORM",
+      "clientConfigId": "helloWorldForm",
+      "resultItemTypeIds": ["ET6", "LAS1"]
+    },
+	{
+      "id": "sirenpanama",
+      "name": "Siren Panama",
+      "description": "Make a request to the ICIJ database (neo4j)",
+
+      "acquireUrl": "/sirenPanama/acquire",
+      
+      "clientConfigType": "FORM",
+      "clientConfigId": "helloWorldForm",
+      "resultItemTypeIds": ["ET5"],
+      "seedConstraints": {
+        "seedTypes": {
+          "allowedTypes": "ENTITY",
+          "itemTypes": [
+            {
+              "id": "ET5",
+              "min": 1,
+              "max": 1
+            }
+          ]
+        }
+      }
+    },
+	{
+      "id": "sirenCompanies",
+      "name": "Siren Companies",
+      "description": "An example that queries a data set of companies from Siren port.",
+
+      "acquireUrl": "/sirenCompanies/acquire",
+
+      "clientConfigType": "FORM",
+      "clientConfigId": "exampleForm",
+      "resultItemTypeIds": ["ET4"],
+      "seedConstraints": {
+        "seedTypes": {
+          "allowedTypes": "ENTITY",
+          "itemTypes": [
+            {
+              "id": "ET6",
+              "min": 1,
+              "max": 1
+            }
+          ]
+        }
+      }
+    },
+	{
+      "id": "sirenInvestements",
+      "name": "Siren Investements",
+      "description": "An Example of a query that...",
+
+      "acquireUrl": "/sirenInvestements/acquire",
+
+      "clientConfigType": "FORM",
+      "clientConfigId": "exampleForm4",
+      "resultItemTypeIds": ["ET11"],
+      "seedConstraints": {
+        "seedTypes": {
+          "allowedTypes": "ENTITY",
+          "itemTypes": [
+            {
+              "id": "ET6",
+              "min": 1,
+              "max": 1
+            }
+          ]
+        }
+      }
+    },
+	{
+      "id": "SirenInvestors",
+      "name": "Siren Investors",
+      "description": "An example that queries a data set of Investor from Siren port.",
+
+      "acquireUrl": "/sirenInvestors/acquire",
+
+      "clientConfigType": "FORM",
+      "clientConfigId": "conditionForm",
+      "resultItemTypeIds": ["ET4","ET5"],
+      "seedConstraints": {
+        "seedTypes": {
+          "allowedTypes": "ENTITY",
+          "itemTypes": [
+            {
+              "id": "ET4",
+              "min": 1,
+              "max": 1000
+            }
+          ]
+        }
+      }
+    },
+	{
+      "id": "sirenArticles",
+      "name": "Siren Articles",
+      "description": "An example that queries a data set of articles from Siren port.",
+
+      "acquireUrl": "/sirenArticles/acquire",
+
+      "clientConfigType": "FORM",
+      "clientConfigId": "helloWorldForm",
+      "resultItemTypeIds": ["ET12"],
+      "seedConstraints": {
+        "seedTypes": {
+          "allowedTypes": "ENTITY",
+          "itemTypes": [
+            {
+              "id": "ET6",
+              "min": 1,
+              "max": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "clientConfigs": [
+    {
+      "id": "exampleForm",
+      "config": {
+        "sections": [
+          {
+            "conditions": [
+              {
+                "id": "term",
+                "label": "Name contains",
+                "mandatory": true,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+,
+              {
+                "id": "nb",
+                "label": "Maximum number of documents",
+                "mandatory": true,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "conditionForm",
+      "config": {
+        "sections": [
+          {
+            "conditions": [
+              {
+                "id": "person",
+                "label": "Include Person",
+                "mandatory": false,
+                "logicalType": "BOOLEAN"
+              },
+              {
+                "id": "org",
+                "label": "Include Organization",
+                "mandatory": false,
+                "logicalType": "BOOLEAN"
+              },
+              {
+                "id": "fin_org",
+                "label": "Include Financial Organization",
+                "mandatory": false,
+                "logicalType": "BOOLEAN"
+              },
+              {
+                "id": "amount",
+                "label": "Minimum raised amount",
+                "mandatory": true,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+            ]
+          }
+        ]
+      }
+    },
+	 {
+      "id": "helloWorldForm",
+      "config": {
+        "sections": [
+          {
+            "conditions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "exampleOptionsForm",
+      "config": {
+        "sections": [
+          {
+            "conditions": [
+              {
+                "id": "useYearOfBirth",
+                "label": "Consider year of birth",
+                "mandatory": false,
+                "logicalType": "BOOLEAN"
+              }
+            ]
+          }
+        ]
+      }
+    },
+	{
+      "id": "exampleOptionsForm2",
+      "config": {
+        "sections": [
+          {
+			"conditions": [
+              {
+                "id": "organizationsMembers",
+                "label": "Consider organization's members",
+                "mandatory": false,
+                "logicalType": "BOOLEAN"	
+              }
+            ]
+          }
+        ]
+      }
+    },
+	{
+      "id": "exampleForm3",
+      "config": {
+        "sections": [
+          {
+			"conditions": [
+              {
+                "id": "term",
+                "label": "Name contains",
+                "mandatory": false,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+,
+              {
+                "id": "nb",
+                "label": "Nombre ...",
+                "mandatory": false,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+            ]
+          }
+        ]
+      }
+    },
+	{
+      "id": "exampleForm4",
+      "config": {
+        "sections": [
+          {
+			"conditions": [
+              {
+                "id": "raised_amount",
+                "label": "Raised amount",
+                "mandatory": false,
+                "logicalType": "DECIMAL"
+              }
+,
+              {
+                "id": "currency_code",
+                "label": "Currency code",
+                "mandatory": false,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
